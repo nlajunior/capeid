@@ -67,11 +67,11 @@
                </td>
 
                <td>
-                <?= 'R$ '.number_format($meta['planejado'],2,",",".")?>
+                <?= number_format($meta['planejado'],2,",",".")?>
                </td>
 
                <td>
-                <?= 'R$ '.number_format($meta['executado'],2,",",".")?>
+                <?= number_format($meta['executado'],2,",",".")?>
                </td>
 
                <td>

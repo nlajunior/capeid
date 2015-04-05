@@ -14,8 +14,25 @@
         </div>
       
        <div class="form-group">
-            <label for="valorexecutado">Mês</label>
-             <input class = "form-control"  type = "text" id = "mes" name="mes" value = "<?=$meta['mes']?>" placeholder="Mês">
+            <label for="mes">Mês</label>
+            <Select class = "form-control" id ="mes" name = "mes" >
+                                     
+                <option value="1" <?php if($meta['mes']=="2"){?>selected='selected' <?php } ?>>JAN</option>
+                <option value="2" <?php if($meta['mes']=="2"){?>selected='selected' <?php } ?>>FEV</option>
+                <option value="3" <?php if($meta['mes']=="3"){?>selected='selected' <?php } ?>>MAR</option>
+                <option value="4" <?php if($meta['mes']=="4"){?>selected='selected' <?php } ?>>ABR</option>
+                <option value="5" <?php if($meta['mes']=="5"){?>selected='selected' <?php } ?>>MAI</option>
+                <option value="6" <?php if($meta['mes']=="6"){?>selected='selected' <?php } ?>>JUN</option>
+                
+                <option value="7" <?php if($meta['mes']=="7"){?>selected='selected' <?php } ?>>JUL</option>
+                <option value="8" <?php if($meta['mes']=="8"){?>selected='selected' <?php } ?>>AGO</option>
+                <option value="9" <?php if($meta['mes']=="9"){?>selected='selected' <?php } ?>>SET</option>
+                <option value="10" <?php if($meta['mes']=="10"){?>selected='selected' <?php } ?>>OUT</option>
+                <option value="11" <?php if($meta['mes']=="11"){?>selected='selected' <?php } ?>>NOV</option>
+                <option value="12" <?php if($meta['mes']=="12"){?>selected='selected' <?php } ?>>DEZ</option>
+                
+          </Select>
+             
         </div>
         
         <div class="form-group">
