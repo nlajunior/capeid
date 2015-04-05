@@ -4,6 +4,7 @@
 
 
 <?php 
+
     verificaUsuario(); 
     $usuarios = listaUsuarios($conexao);
 ?>
