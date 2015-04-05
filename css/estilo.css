@@ -1,0 +1,75 @@
+.alerta{
+    max-width: 70%;
+    clear: both;
+}
+
+.cabecalho{
+    width: 100%;
+}
+
+.principal{
+	padding: 20px 15px;
+	text-align:center;
+}
+
+
+
+
+.painel{
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1200;
+}
+
+.consulta{
+ font-size: inherit;    
+}
+
+
+.tabela{
+    width: 50%;
+    min-width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: inherit;
+}
+
+.rodape {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    background-color: #4682B4;
+    color: #FFF;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header div{
+    text-align: center;        
+}
+
+
+.botoes{
+    
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
