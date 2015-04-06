@@ -17,7 +17,7 @@
             <label for="mes">Mês</label>
             <Select class = "form-control" id ="mes" name = "mes" >
                                      
-                <option value="1" <?php if($meta['mes']=="2"){?>selected='selected' <?php } ?>>JAN</option>
+                <option value="1" <?php if($meta['mes']=="1"){?>selected='selected' <?php } ?>>JAN</option>
                 <option value="2" <?php if($meta['mes']=="2"){?>selected='selected' <?php } ?>>FEV</option>
                 <option value="3" <?php if($meta['mes']=="3"){?>selected='selected' <?php } ?>>MAR</option>
                 <option value="4" <?php if($meta['mes']=="4"){?>selected='selected' <?php } ?>>ABR</option>
