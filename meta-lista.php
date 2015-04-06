@@ -40,8 +40,8 @@
        <tr>
         <td>Vendedor</td>   
         <td>Indicador</td>
-        <td>Planejado</td>
-        <td>Realizado</td>
+        
+        
         <td>Resultado</td>
         <td>Opções</td>   
        </tr>
@@ -64,14 +64,6 @@
                </td>
                <td>
                 <?=$meta['indicador_nome']?>
-               </td>
-
-               <td>
-                <?= number_format($meta['planejado'],2,",",".")?>
-               </td>
-
-               <td>
-                <?= number_format($meta['executado'],2,",",".")?>
                </td>
 
                <td>
