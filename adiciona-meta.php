@@ -1,21 +1,39 @@
 <?php
     require_once("cabecalho.php");
-    require_once("banco-meta.php");
+    require_once("conecta.php");
+    
+    require_once("autoload.php");
     require_once("logica-usuario.php");
 ?>
 <?php
     verificaUsuario();
 
-    $valorplanejado = $_POST["valorplanejado"];
-    $valorexecutado = $_POST["valorexecutado"];
-    $mes            = $_POST["mes"];
-    $indicador_id   = $_POST["indicador_id"];
-    $usuario_id     = $_POST["usuario_id"];
+    $meta = new Meta();
+    $indicador = new Indicador();
+    $vendedor = new Usuario();
+    $dao = new MetaDao($conexao);
     
-      
-    if(insereMeta($conexao, $valorplanejado, $valorexecutado, $mes, $indicador_id, $usuario_id)){
+    $meta->setValorPlanejado($_POST["valorplanejado"]);
+    $meta->setValorExecutado($_POST["valorexecutado"]);
+    
+    
         
-        Header("Location:meta-lista.php");
+    $meta->setMes($_POST["mesAno"]);
+    $meta->setAno($_POST["mesAno"]);
+    
+    $indicador->setId($_POST["indicador_id"]);
+    $vendedor->setId($_POST["usuario_id"]);
+
+    $meta->setIndicador($indicador);
+    $meta->setVendedor($vendedor);
+    
+    $pusuario_id = $meta->getVendedor()->getId();
+    $pmes = $meta->getMes();
+    $pano = $meta->getAno();  
+
+    if($dao->insereMeta($meta)){
+        
+    header("Location:consulta-vendedor.php?usuario_id=$pusuario_id&mes=$pmes&ano=$pano");
     } 
          
     else {
