@@ -1,72 +1,40 @@
-.alerta{
-    max-width: 70%;
-    clear: both;
+body {
+	padding-top: 50px;
+    
+}
+.principal {
+	padding: 40px 15px;
+	
 }
 
-.cabecalho{
-    width: 100%;
+.linha{
+    padding-bottom: 15px;
 }
 
-.principal{
-	padding: 20px 15px;
-	text-align:center;
+.centralizar{
+    text-align: center;
 }
 
-
-
-
-.painel{
-    margin: 20px auto;
-    width: 80%;
-    max-width: 1200;
+  .navbar .glyphicon {
+       color: white;
 }
 
-.consulta{
- font-size: inherit;    
-}
-
-
-.tabela{
-    width: 50%;
-    min-width: 250px;
-    display: inline-block;
-    vertical-align: top;
-    font-size: inherit;
-}
-
-.rodape {
+.rodape{
     position: fixed;
     text-align: center;
     bottom: 0;
-    background-color: #4682B4;
-    color: #FFF;
     left: 0;
     width: 100%;
     box-sizing: border-box;
 }
-
-header div{
-    text-align: center;        
+.imagem{
+    width: 100%; text-align: center;
 }
 
-
-.botoes{
-    
-    display: inline-block;
+.consulta{
+    font-size: inherit;
+    text-align: left;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
