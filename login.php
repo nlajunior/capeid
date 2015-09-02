@@ -1,18 +1,23 @@
-<?php require_once ("banco-usuario.php")?>
-<?php require_once("logica-usuario.php")?>
+
+<?php require_once("logica-usuario.php");
+      require_once("class/UsuarioDAO.php");
+      require_once("conecta.php");?>
+
 
 <?php
     $email = $_POST["email"];
     $senha = $_POST["senha"];
     
-    $usuario = buscaUsuario($conexao, $email, $senha);
+    $dao = new UsuarioDAO($conexao);
+    
+    $usuarioSelecionado = $dao->buscaUsuario($email, $senha);
 
-    if ($usuario==null){
+    if ($usuarioSelecionado==null){
       $_SESSION["danger"] = "Usuário ou senha inválido!";    
       header("Location: index.php");
     }else{
-       $_SESSION["success"] = "Usuário logado com sucesso!";    
-       logaUsuario($usuario["email"]);
+       $_SESSION["success"] = "Usuário ".$usuarioSelecionado->getEmail(). " logado com sucesso!";    
+       logaUsuario($usuarioSelecionado->getEmail());
        header("Location: acesso.php");
        }
 

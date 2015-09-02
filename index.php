@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php require_once("autoload.php");?>
 <?php require_once("logica-usuario.php");?>
 <?php error_reporting(E_ALL ^ E_NOTICE); ?> 
 <?php require_once("mostra-alerta.php");?>
@@ -11,11 +11,12 @@
        <link rel="stylesheet" href="css/reset.css"/>
        <link rel="stylesheet" href="css/estilo.css"/>
        <link href="css/bootstrap.css" rel="stylesheet" />
+       <link rel="stylesheet" href="css/bootstrap-flatly.css"> 
        <meta charset="utf-8"  name="viewport" content="width=device-width, initial-scale=1">
    </head>  
     
     <body>
-       <header class="cabecalho">
+       <header class="imagem">
             <div class="container">
                 <img  src ="images/logo03-2.png" alt="Logomarca do sistema">
             </div> 
@@ -27,8 +28,8 @@
             </div>
         </header>
         <main>
-            <div class="container"> 
-                  <div class="principal">
+            
+                  <div class="container-fluid centralizar">
 
                     <form class="form-inline" action = "login.php" method = "post">
                           <div class="form-group">
@@ -46,10 +47,11 @@
                               <input type="checkbox"> Esqueceu a senha
                             </label>
                           </div>
-                          <button type="submit" class="btn btn-primary">Acessar</button>
+                                       
+                          <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Acessar</button>
                     </form>
                 </div>
-            </div>
+            
         </main>
         <footer class="rodape">Copyright &copy; 2015</footer>    
     </body>

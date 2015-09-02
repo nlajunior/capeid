@@ -1,46 +1,87 @@
-<?php 
-error_reporting(E_ALL ^ E_NOTICE);  
-require_once("mostra-alerta.php");?>
-<?php require_once("logica-usuario.php");?>
-<html>
-     <head>
-       <title>CAPEID</title>
-       <link rel="icon" href = "images/logo02.png"/>
-       <link rel="stylesheet" href="css/reset.css"/>
-       <link rel="stylesheet" href="css/menu.css"/>     
-       <link rel="stylesheet" href="css/estilo.css"/>
-       <link href="css/bootstrap.css" rel="stylesheet"/>
-       <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    </head> 
+<?php
+ /*Revisado 18/08/2015*/
 
-     <body>
-        <header class="cabecalho"> 
-            <nav>
-                 <ul class="menu">
+function carregaClasse($nomeDaClasse){
+    require_once("class/".$nomeDaClasse.".php");
+  }
+  spl_autoload_register("carregaClasse");
+
+  error_reporting(E_ALL ^ E_NOTICE);
+  require_once("mostra-alerta.php"); 
+  require_once("logica-usuario.php"); 
+ 
+?>
+
+<html>
+  <head>
+      
+	
+	<title>Treinid</title>
+    <link rel="icon" href = "images/logo02.png"/>   
+	<link rel="stylesheet" href="css/bootstrap-flatly.css">
+    <link href="css/estilo.css" rel="stylesheet">
+	<meta charset="utf-8"  name="viewport" content="width=device-width, initial-scale=1">
+       
+  </head>
+    
+  <body>
+  	<header>
+    
+        <nav class="navbar navbar-default navbar-fixed-top">
+  		<div class="container-fluid">
+    			<div class="navbar-header">
+        			<a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span></a>
+					<button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
+        					<span class="glyphicon glyphicon-align-justify"></span>
+       					</button>
+    			</div>
+    
+			<div>
+      				<ul class="nav navbar-nav collapse navbar-collapse">
+        				<li class="active"><a href="http://www.cigel.com.br">Home</a></li>
+        				<li class="dropdown">
+          				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Meta<span class="caret"></span></a>
+          					<ul class="dropdown-menu">
+            						<li><a href="consulta-vendedor.php">Listar</a></li>
+            						<li><a href="meta-formulario.php">Incluir</a></li>
+            				</ul>
+        				</li>
+					<li class="dropdown">
+          				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Indicador<span class="caret"></span></a>
+          					<ul class="dropdown-menu">
+            						<li><a href="consulta-vendedor.php">Listar</a></li>
+            						<li><a href="consulta-vendedor.php">Incluir</a></li>
+            					</ul>
+        				</li>
+					<li class="dropdown">
+          				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Treinamento<span class="caret"></span></a>
+          					<ul class="dropdown-menu">
+            						<li><a href="consulta-vendedor.php">Listar</a></li>
+            						<li><a href="consulta-vendedor.php">Incluir</a></li>
+            					</ul>
+        				</li>
+        				
                         
-                        
-                            <li><a href="#">Cadastros</a>
-                                <ul>
-                                      <li><a href="livro-lista.php">Livros</a></li>
-                                      <li><a href="video-lista.php">Vídeos</a></li>
-                                      <li><a href="#">Treinamentos</a></li>                    
-                                </ul>
-                            </li>
-                        <li><a href="meta-lista.php">Metas</a></li>
-                        <li><a href="meta-lista.php">Plano</a></li>
-                        <li><a href="logout.php">Logout</a></li>                
-                </ul>
-                </nav>
+					<?php if (usuarioEstaLogado()){?>
+					   <li><a href="logout.php">Sair</a></li>  
+        				<?php } ?>
+      
+      				</ul>
+                    
             
-           
-           <div class="container-fluid alerta">
-                <?php 
-                    mostraAlerta("success");
-                    mostraAlerta("danger");    
-                ?>   
-            </div>
-         </header>        
+                        
+    			
+
+  		</div>
+		</nav>
+	</header>
+  	
+	<div class="container">
+		<div class="principal">
+            
+            <div class="container centralizar">
+		      <?php mostraAlerta("success"); ?>
+		      <?php mostraAlerta("danger"); ?>
+         </div>
          
-	   <div class = "container">
-           
-          
+	  

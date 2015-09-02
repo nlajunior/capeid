@@ -1,22 +1,59 @@
 <?php
+
     require_once("cabecalho.php");
     require_once("logica-usuario.php");
-    require_once("banco-usuario.php");
-    require_once("banco-indicador.php");
-        
-   
+    
+    require_once("conecta.php");
+    require_once("autoload.php");
+    
     verificaUsuario();
     
-    $meta = array("valorplanejado"=>"", "valorexecutado"=>"", "mes"=>"", "indicador_id"=>"0","usuario_id"=>"0");
-    
+    $meta = new Meta();
+    $daoVendedor = new UsuarioDAO($conexao);
+    $daoIndicador = new IndicadorDao($conexao);
 
-    $usuarios = listaUsuarios($conexao);
-    $indicadores = listaIndicadores($conexao);?>
-
+    $listaDeIndicadores = $daoIndicador->listaIndicadores();
+    $listaDeVendedores = $daoVendedor->listaUsuarios();?>
 
 <form action = "adiciona-meta.php" method = "Post">
+  
+   <div class="panel-heading panel-primary"><h3>Adicionar Metas</h3></div>
+   
+   
+            <div class="form-group">
+            
+                <input type = "hidden" name = "id" value = "<?=$meta->getId()?>">
     
-       <?php include ("meta-formulario-base.php")?>
+            </div>   
+            
+             <div class="form-group">
+                <select name="indicador_id" class="form-control">
+
+                    <option>Escolha um indicador</option>
+                    <?php 
+                        foreach($listaDeIndicadores as $indicadorAtual) : 
+                        ?>      
+                            <option value="<?=$indicadorAtual->getId()?>"><?=$indicadorAtual->getNome()?></option>
+                        <?php endforeach ?>
+                </select>
+            </div>
+    
+    
+            <div class="form-group">
+           
+                <select name = "usuario_id" class = "form-control">	
+                    <option>Escolha o vendedor</option>
+                    <?php 
+                        foreach($listaDeVendedores as $vendedor):
+                    ?>
+                    <option value  = "<?=$vendedor->getId()?>"><?=$vendedor->getNome()?></option>	
+                    <?php endforeach ?>
+                </select>
+            </div>
+        
+                    
+            <?php include ("meta-formulario-base.php")?>
+        
 </form>
  
 <?php include("rodape.php")?>
