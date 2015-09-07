@@ -3,7 +3,7 @@
     require_once("conecta.php");
     
     require_once("autoload.php");
-    require_once("logica-usuario.php");
+    /*require_once("logica-usuario.php");*/
 ?>
 <?php
     verificaUsuario();

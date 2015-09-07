@@ -18,6 +18,7 @@
  
 <button class = "btn btn-primary" type = "submit">Salvar</button>
 <button class = "btn btn-primary" type = "submit">Voltar</button>
+<i class="fa fa-arrow-circle-left "></i> Voltar
         
  
 

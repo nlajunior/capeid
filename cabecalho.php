@@ -17,7 +17,7 @@ function carregaClasse($nomeDaClasse){
       
 	
 	<title>Treinid</title>
-    <link rel="icon" href = "images/logo02.png"/>   
+    <link rel="icon" href = "images/llogo-treinid.png"/>   
 	<link rel="stylesheet" href="css/bootstrap-flatly.css">
     <link href="css/estilo.css" rel="stylesheet">
 	<meta charset="utf-8"  name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +30,7 @@ function carregaClasse($nomeDaClasse){
         <nav class="navbar navbar-default navbar-fixed-top">
   		<div class="container-fluid">
     			<div class="navbar-header">
-        			<a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span></a>
+        			<a class="navbar-brand" href="acesso.php"><span class="glyphicon glyphicon-home"></span></a>
 					<button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse">
         					<span class="glyphicon glyphicon-align-justify"></span>
        					</button>

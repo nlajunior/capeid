@@ -7,7 +7,7 @@
 <html>
     <head>
        <title>CAPEID</title>
-       <link rel="icon" href = "images/logo03-2.png"/>
+       <link rel="icon" href = "images/llogo-treinid.png"/>
        <link rel="stylesheet" href="css/reset.css"/>
        <link rel="stylesheet" href="css/estilo.css"/>
        <link href="css/bootstrap.css" rel="stylesheet" />
@@ -18,7 +18,7 @@
     <body>
        <header class="imagem">
             <div class="container">
-                <img  src ="images/logo03-2.png" alt="Logomarca do sistema">
+                <img  src ="images/llogo-treinid.png" alt="Logomarca do sistema">
             </div> 
             <div class="container alerta">
                  <?php 
